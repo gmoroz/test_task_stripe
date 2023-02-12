@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      .item-info {
+        background-color: #f2f2f2;
+        width: 50%;
+        margin: auto;
+        padding: 50px;
+        text-align: center;
+      }
+
+      h1 {
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .price {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item-info">
+      <h1>{{ item.name }}</h1>
+      <p>{{ item.description }}</p>
+      <div class="price">{{ item.price }}</div>
+    </div>
+  </body>
+</html>
