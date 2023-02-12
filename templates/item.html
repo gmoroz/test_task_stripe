@@ -36,15 +36,30 @@
         text-decoration: none;
       }
     </style>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="text/javascript">
+      const stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
+      var checkoutButton = document.getElementById("buy-button");
+      async function buyItem(itemId) {
+        try {
+          const response = await fetch(`/buy/${itemId}`);
+          const { sessionId } = await response.json();
+
+          stripe.redirectToCheckout({ sessionId });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="item-container">
       <div class="item-name">{{ item.name }}</div>
       <div class="item-description">{{ item.description }}</div>
       <div class="item-price">${{ item.price }}</div>
-      <a class="buy-button" onclick="window.location.href='/buy/{{ item.id }}'"
-        >Buy</a
-      >
+      <button class="buy-button" onclick="buyItem('{{ item.id }}' )">
+        Buy
+      </button>
     </div>
   </body>
 </html>

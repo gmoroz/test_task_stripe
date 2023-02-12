@@ -35,10 +35,10 @@ class SessionCreateView(DetailView):
                 },
             ],
             mode='payment',
-            success_url=settings.DOMAIN + '/success/',
-            cancel_url=settings.DOMAIN + '/cancel/',
+            success_url=settings.DOMAIN + 'success/',
+            cancel_url=settings.DOMAIN + 'cancel/',
         )
-        return JsonResponse({'id': session.id})
+        return JsonResponse({'sessionId': session.id})
 
 
 class ItemDetailView(TemplateView):
@@ -48,4 +48,5 @@ class ItemDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         item = Item.objects.get(pk=self.kwargs.get('pk'))
         context['item'] = item
+        context['STRIPE_PUBLIC_KEY'] = settings.STRIPE_PUBLIC_KEY
         return context

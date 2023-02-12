@@ -131,4 +131,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
-DOMAIN = os.getenv('DOMAIN', 'localhost:8000')
+DOMAIN = os.getenv('DOMAIN', 'http://127.0.0.1:8000/')
