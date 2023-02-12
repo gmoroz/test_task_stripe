@@ -51,7 +51,12 @@
       <p class="item-name">{{ item.name }}</p>
       <p class="item-description">{{ item.description }}</p>
       <p class="item-price">${{ item.get_price }}</p>
-      <button class="buy-button">Buy</button>
+      <button
+        class="buy-button"
+        onclick="window.location.href='/buy/{{ item.id }}'"
+      >
+        Buy
+      </button>
     </div>
     {% endfor %}
   </body>
