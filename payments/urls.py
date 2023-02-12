@@ -19,8 +19,14 @@ urlpatterns = [
     path(
         '',
         TemplateView.as_view(
-            template_name='items.html', extra_context={'items': Item.objects.all()},
+            template_name='items.html',
+            extra_context={'items': Item.objects.all()},
         ),
         name='items',
+    ),
+    path(
+        'item/<int:pk>',
+        views.ItemDetailView.as_view(),
+        name='item',
     ),
 ]
