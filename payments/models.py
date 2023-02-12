@@ -10,7 +10,3 @@ class Item(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
-    @property
-    def get_price(self) -> str:
-        return f'{self.price}'

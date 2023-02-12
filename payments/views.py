@@ -29,7 +29,7 @@ class SessionCreateView(DetailView):
                         'product_data': {
                             'name': f'{item.name}',
                         },
-                        'unit_amount': item.get_price,
+                        'unit_amount': item.price * 100,
                     },
                     'quantity': 1,
                 },
