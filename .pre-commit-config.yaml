@@ -20,7 +20,6 @@ repos:
           - --expand-star-imports
           - --remove-duplicate-keys
           - --remove-unused-variables
-          - --max-line-length=100
   - repo: https://github.com/asottile/setup-cfg-fmt
     rev: v2.2.0
     hooks:
