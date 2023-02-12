@@ -13,4 +13,4 @@ class Item(models.Model):
 
     @property
     def get_price(self) -> str:
-        return f'{self.price // 100} $'
+        return f'{self.price}'
