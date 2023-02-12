@@ -22,7 +22,7 @@ class SessionCreateView(DetailView):
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'inr',
+                        'currency': 'usd',
                         'product_data': {
                             'name': f'{item.name}',
                         },
@@ -32,7 +32,7 @@ class SessionCreateView(DetailView):
                 },
             ],
             mode='payment',
-            success_url=YOUR_DOMAIN + '/success.html',
-            cancel_url=YOUR_DOMAIN + '/cancel.html',
+            success_url=settings.DOMAIN + '/success/',
+            cancel_url=settings.DOMAIN + '/cancel/',
         )
         return JsonResponse({'id': session.id})
