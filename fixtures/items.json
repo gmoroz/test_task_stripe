@@ -1,0 +1,92 @@
+[
+  {
+    "model": "payments.item",
+    "pk": 4,
+    "fields": {
+      "name": "Deluxe Laptop",
+      "description": "Experience the ultimate in portability and performance with our Deluxe Laptop. With its sleek design and powerful specs, you'll be able to work and play wherever you go.",
+      "price": 999
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 5,
+    "fields": {
+      "name": "Smart Watch",
+      "description": "Stay connected and on top of your game with our innovative Smart Watch. With its large touch screen display, fitness tracking capabilities, and mobile integration, you'll never miss a beat.",
+      "price": 299
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 6,
+    "fields": {
+      "name": "High-Tech Headphones",
+      "description": "Elevate your listening experience with our High-Tech Headphones. Featuring active noise cancellation, crystal-clear audio, and a comfortable fit, you'll never want to take them off.",
+      "price": 149
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 7,
+    "fields": {
+      "name": "Gaming Mouse",
+      "description": "Dominate your opponents and level up your gaming skills with our advanced Gaming Mouse. With customizable buttons and precision tracking, you'll have the edge you need to win.",
+      "price": 59
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 8,
+    "fields": {
+      "name": "Virtual Reality Headset",
+      "description": "Step into a new world of immersive entertainment with our Virtual Reality Headset. With its stunning graphics, 360-degree views, and realistic haptic feedback, you'll feel like you're really there.",
+      "price": 399
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 9,
+    "fields": {
+      "name": "Smart Home Hub",
+      "description": "Transform your home into a smart, connected space with our innovative Smart Home Hub. With voice control, automated lighting and temperature settings, and the ability to connect with other smart devices, you'll have complete control over your home's environment.",
+      "price": 149
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 10,
+    "fields": {
+      "name": "Fitness Tracker",
+      "description": "Take control of your health and fitness with our cutting-edge Fitness Tracker. With its advanced heart rate monitoring, sleep tracking, and workout tracking capabilities, you'll have all the information you need to reach your goals.",
+      "price": 99
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 11,
+    "fields": {
+      "name": "Wireless Charger",
+      "description": "Keep all of your devices charged and ready to go with our sleek Wireless Charger. With fast charging capabilities and the ability to charge multiple devices at once, you'll never have to worry about dead batteries again.",
+      "price": 49
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 12,
+    "fields": {
+      "name": "Bluetooth Speaker",
+      "description": "Bring your music with you wherever you go with our powerful Bluetooth Speaker. With its crisp, clear audio, long battery life, and portable design, you'll always have the soundtrack to your life.",
+      "price": 79
+    }
+  },
+  {
+    "model": "payments.item",
+    "pk": 13,
+    "fields": {
+      "name": "Smart Thermostat",
+      "description": "Take control of your home's heating and cooling with our advanced Smart Thermostat. With remote control, automated scheduling, and energy-saving features, you'll stay comfortable and save money on your energy bills.",
+      "price": 199
+    }
+  }
+]
