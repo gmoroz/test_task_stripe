@@ -77,13 +77,13 @@ WSGI_APPLICATION = 'test_task_stripe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DDATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_SERVER'),
+        'NAME': os.getenv('POSTGRES_DB', 'stripe'),
+        'USER': os.getenv('POSTGRES_USER', 'stripe'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'stripe'),
+        'HOST': os.getenv('POSTGRES_SERVER', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
     },
 }
@@ -132,5 +132,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
-STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
-DOMAIN = os.getenv('DOMAIN')
+DOMAIN = os.getenv('DOMAIN', 'localhost:8000')
