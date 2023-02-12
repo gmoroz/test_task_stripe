@@ -1,0 +1,6 @@
+.gitignore
+.venv/
+__pycache__/
+*.md
+.git
+.mypy_cache/

@@ -3,7 +3,6 @@ name = "test-task-stripe"
 version = "0.1.0"
 description = ""
 authors = ["gmoroz <12345hasek@gmail.com>"]
-readme = "README.md"
 packages = [{include = "test_task_stripe"}]
 
 [tool.poetry.dependencies]
