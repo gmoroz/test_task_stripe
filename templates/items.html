@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Список продуктов</title>
+    <style>
+      body {
+        background-color: #808080;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .item-container {
+        display: inline-block;
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+      }
+
+      .item-name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .item-description {
+        font-size: 16px;
+        color: gray;
+      }
+
+      .item-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: green;
+      }
+
+      .buy-button {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    {% for item in items %}
+    <div class="item-container">
+      <p class="item-name">{{ item.name }}</p>
+      <p class="item-description">{{ item.description }}</p>
+      <p class="item-price">${{ item.get_price }}</p>
+      <button class="buy-button">Buy</button>
+    </div>
+    {% endfor %}
+  </body>
+</html>
