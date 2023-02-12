@@ -4,6 +4,7 @@ import stripe
 from django.conf import settings
 from django.http import JsonResponse
 from django.views.generic import DetailView
+from django.views.generic import TemplateView
 
 from .models import Item
 
@@ -11,6 +12,8 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 class SessionCreateView(DetailView):
+    model = Item
+
     def get(self, request, *args, **kwargs):
         try:
             item = self.get_object()
@@ -36,3 +39,13 @@ class SessionCreateView(DetailView):
             cancel_url=settings.DOMAIN + '/cancel/',
         )
         return JsonResponse({'id': session.id})
+
+
+class ItemDetailView(TemplateView):
+    template_name = 'item.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        item = Item.objects.get(pk=self.kwargs.get('pk'))
+        context['item'] = item
+        return context
