@@ -1,44 +1,50 @@
 <html>
   <head>
     <style>
-      .item-info {
-        background-color: #f2f2f2;
-        width: 50%;
-        margin: auto;
+      .item-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #e0e0e0;
         padding: 50px;
-        text-align: center;
+        border-radius: 10px;
       }
-
-      h1 {
+      .item-name {
+        font-size: 32px;
         font-family: Arial, sans-serif;
-        font-weight: bold;
-        font-size: 36px;
         color: #333;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
       }
-
-      p {
-        font-family: Arial, sans-serif;
+      .item-description {
         font-size: 18px;
-        color: #333;
-        margin-bottom: 30px;
-        text-align: left;
-      }
-
-      .price {
         font-family: Arial, sans-serif;
-        font-size: 24px;
         color: #333;
-        font-weight: bold;
-        margin-bottom: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .item-price {
+        font-size: 24px;
+        font-family: Arial, sans-serif;
+        color: green;
+        margin-bottom: 20px;
+      }
+      .buy-button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <div class="item-info">
-      <h1>{{ item.name }}</h1>
-      <p>{{ item.description }}</p>
-      <div class="price">{{ item.price }}</div>
+    <div class="item-container">
+      <div class="item-name">{{ item.name }}</div>
+      <div class="item-description">{{ item.description }}</div>
+      <div class="item-price">${{ item.price }}</div>
+      <a class="buy-button" onclick="window.location.href='/buy/{{ item.id }}'"
+        >Buy</a
+      >
     </div>
   </body>
 </html>
