@@ -1,10 +1,22 @@
 version: "3.9"
 
+x-common-variables: &common-variables
+  STRIPE_PUBLIC_KEY: $STRIPE_PUBLIC_KEY
+  STRIPE_SECRET_KEY: $STRIPE_SECRET_KEY
+  DOMAIN: $DOMAIN
+  POSTGRES_DB: $POSTGRES_DB
+  POSTGRES_USER: $POSTGRES_USER
+  POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+  POSTGRES_SERVER: $POSTGRES_SERVER
+  DB_PORT: $DB_PORT
+  SECRET_KEY: $SECRET_KEY
+
+
 services:
   web:
     image: gmoroz/stripe-app:$GITHUB_REF_NAME-$GITHUB_RUN_ID
-    env_file:
-      .env
+    environment:
+      *common-variables
     ports:
       - 80:80
     depends_on:
@@ -15,9 +27,7 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_USER: $POSTGRES_USER
-      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
-      POSTGRES_DB: $POSTGRES_DB
+      *common-variables
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always
