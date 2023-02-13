@@ -23,15 +23,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_push
     env:
-      STRIPE_PUBLIC_KEY: ${{ STRIPE_PUBLIC_KEY }}
-      STRIPE_SECRET_KEY: ${{ STRIPE_SECRET_KEY }}
-      DOMAIN: ${{ DOMAIN }}
-      POSTGRES_DB: ${{ POSTGRES_DB }}
-      POSTGRES_USER: ${{ POSTGRES_USER }}
-      POSTGRES_PASSWORD: ${{ POSTGRES_PASSWORD }}
-      POSTGRES_SERVER: ${{ POSTGRES_SERVER }}
-      DB_PORT: ${{ DB_PORT }}
-      SECRET_KEY: ${{ SECRET_KEY }}
+      STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+      STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+      DOMAIN: ${{ secrets.DOMAIN }}
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_SERVER: ${{ secrets.POSTGRES_SERVER }}
+      DB_PORT: ${{ secrets.DB_PORT }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
     steps:
       - name: clone code
         uses: actions/checkout@v2
