@@ -32,29 +32,29 @@ jobs:
       POSTGRES_SERVER: ${{ POSTGRES_SERVER }}
       DB_PORT: ${{ DB_PORT }}
       SECRET_KEY: ${{ SECRET_KEY }}
-  steps:
-    - name: clone code
-      uses: actions/checkout@v2
-    - name: render configs
-      run: |
-        mkdir deploy
-        cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
-    - name: copy files to server
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        source: "deploy/docker-compose.yaml"
-        target: "stripe-app"
-        strip_components: 1
-    - name: deploy app and clean old version
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        password: ${{ secrets.SSH_PASSWORD }}
-        script: |
-          cd stripe-app
-          docker-compose down
-          docker-compose up -d
+    steps:
+      - name: clone code
+        uses: actions/checkout@v2
+      - name: render configs
+        run: |
+          mkdir deploy
+          cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
+      - name: copy files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "deploy/docker-compose.yaml"
+          target: "stripe-app"
+          strip_components: 1
+      - name: deploy app and clean old version
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd stripe-app
+            docker-compose down
+            docker-compose up -d
